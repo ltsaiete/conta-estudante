@@ -13,8 +13,16 @@ FrmMenu::~FrmMenu()
     delete ui;
 }
 
+//Este slot vai abrir o formulario para cadastro de estudante
 void FrmMenu::on_mnCadEst_clicked()
 {
     mnCadEst = new FrmEstudante(this);
     mnCadEst -> show();
+}
+
+//Este slot vai abrir o formulario para criacao de conta
+void FrmMenu::on_mnCadConta_clicked()
+{
+    mnCadConta = new FrmConta(this);
+    mnCadConta -> show();
 }

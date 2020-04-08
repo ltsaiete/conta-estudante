@@ -2,7 +2,10 @@
 #define FRMMENU_H
 
 #include <QMainWindow>
-#include "frmestudante.h"
+
+//Importacao das janelas dos outros formularios
+#include "frmestudante.h"   //Form Cadastro de estudante
+#include "frmconta.h"       //Criacao de conta estudante
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class FrmMenu; }
@@ -19,8 +22,12 @@ public:
 private slots:
     void on_mnCadEst_clicked();
 
+    void on_mnCadConta_clicked();
+
 private:
     Ui::FrmMenu *ui;
+    //Criacao dos objectos dos forms
     FrmEstudante *mnCadEst;
+    FrmConta *mnCadConta;
 };
 #endif // FRMMENU_H
