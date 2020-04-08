@@ -2,6 +2,7 @@
 #define FRMMENU_H
 
 #include <QMainWindow>
+#include "frmestudante.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class FrmMenu; }
@@ -15,7 +16,11 @@ public:
     FrmMenu(QWidget *parent = nullptr);
     ~FrmMenu();
 
+private slots:
+    void on_mnCadEst_clicked();
+
 private:
     Ui::FrmMenu *ui;
+    FrmEstudante *mnCadEst;
 };
 #endif // FRMMENU_H

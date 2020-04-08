@@ -6,16 +6,101 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>787</width>
     <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>FrmMenu</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>130</y>
+      <width>211</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Cadastrar</string>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>19</x>
+       <y>19</y>
+       <width>181</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="mnCadEst">
+        <property name="text">
+         <string>Estudante</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="mnCadConta">
+        <property name="text">
+         <string>Conta de Estudante</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>242</x>
+      <y>30</y>
+      <width>231</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="text">
+     <string>Menu Principal</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>787</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionEstudante">
+   <property name="text">
+    <string>Estudante</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>Cartao de Estudante</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

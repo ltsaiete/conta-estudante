@@ -13,3 +13,8 @@ FrmMenu::~FrmMenu()
     delete ui;
 }
 
+void FrmMenu::on_mnCadEst_clicked()
+{
+    mnCadEst = new FrmEstudante(this);
+    mnCadEst -> show();
+}
