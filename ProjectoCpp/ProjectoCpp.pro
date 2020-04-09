@@ -22,6 +22,10 @@ SOURCES += \
     frmmenu.cpp
 
 HEADERS += \
+    cidadao.h \
+    contacartao.h \
+    contaestudante.h \
+    estudante.h \
     frmconta.h \
     frmestudante.h \
     frmmenu.h
