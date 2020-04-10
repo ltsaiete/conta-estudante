@@ -51,10 +51,10 @@
    <widget class="QWidget" name="formLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>50</x>
       <y>40</y>
-      <width>351</width>
-      <height>221</height>
+      <width>322</width>
+      <height>206</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
@@ -66,7 +66,16 @@
         </font>
        </property>
        <property name="text">
-        <string>Numero de Estudante</string>
+        <string>Nome</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="txtNome">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
        </property>
       </widget>
      </item>
@@ -78,12 +87,12 @@
         </font>
        </property>
        <property name="text">
-        <string>Nome</string>
+        <string>BI</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEdit_2">
+      <widget class="QLineEdit" name="txtBI">
        <property name="font">
         <font>
          <pointsize>9</pointsize>
@@ -99,12 +108,12 @@
         </font>
        </property>
        <property name="text">
-        <string>BI</string>
+        <string>Numero de Estudante</string>
        </property>
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="lineEdit_3">
+      <widget class="QLineEdit" name="txtNumEst">
        <property name="font">
         <font>
          <pointsize>9</pointsize>
@@ -120,12 +129,12 @@
         </font>
        </property>
        <property name="text">
-        <string>Sexo</string>
+        <string>Genero</string>
        </property>
       </widget>
      </item>
      <item row="3" column="1">
-      <widget class="QLineEdit" name="lineEdit_4">
+      <widget class="QLineEdit" name="txtGenero">
        <property name="font">
         <font>
          <pointsize>9</pointsize>
@@ -146,7 +155,7 @@
       </widget>
      </item>
      <item row="4" column="1">
-      <widget class="QLineEdit" name="lineEdit_5">
+      <widget class="QLineEdit" name="txtInstituicao">
        <property name="font">
         <font>
          <pointsize>9</pointsize>
@@ -167,16 +176,7 @@
       </widget>
      </item>
      <item row="5" column="1">
-      <widget class="QLineEdit" name="lineEdit_6">
-       <property name="font">
-        <font>
-         <pointsize>9</pointsize>
-        </font>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="txtCurso">
        <property name="font">
         <font>
          <pointsize>9</pointsize>
@@ -219,16 +219,16 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="btSalvar">
       <property name="text">
        <string>Salvar</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btLimpar">
       <property name="text">
-       <string>Cancelar</string>
+       <string>Limpar</string>
       </property>
      </widget>
     </item>

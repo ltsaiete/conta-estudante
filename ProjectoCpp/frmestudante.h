@@ -1,6 +1,5 @@
 #ifndef FRMESTUDANTE_H
 #define FRMESTUDANTE_H
-
 #include <QDialog>
 
 namespace Ui {
@@ -14,6 +13,9 @@ class FrmEstudante : public QDialog
 public:
     explicit FrmEstudante(QWidget *parent = nullptr);
     ~FrmEstudante();
+
+private slots:
+    void on_btSalvar_clicked();
 
 private:
     Ui::FrmEstudante *ui;

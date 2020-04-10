@@ -12,3 +12,9 @@ FrmEstudante::~FrmEstudante()
 {
     delete ui;
 }
+
+void FrmEstudante::on_btSalvar_clicked()
+{
+
+
+}
