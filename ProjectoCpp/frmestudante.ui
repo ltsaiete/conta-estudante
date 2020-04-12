@@ -53,7 +53,7 @@
      <rect>
       <x>50</x>
       <y>40</y>
-      <width>322</width>
+      <width>431</width>
       <height>206</height>
      </rect>
     </property>
@@ -235,6 +235,17 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>txtNome</tabstop>
+  <tabstop>txtBI</tabstop>
+  <tabstop>txtNumEst</tabstop>
+  <tabstop>txtGenero</tabstop>
+  <tabstop>txtInstituicao</tabstop>
+  <tabstop>txtCurso</tabstop>
+  <tabstop>lineEdit_7</tabstop>
+  <tabstop>btSalvar</tabstop>
+  <tabstop>btLimpar</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

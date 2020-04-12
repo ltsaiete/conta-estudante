@@ -14,7 +14,7 @@ protected: //Declaracao de Variaveis
 
 public:
     Estudante();
-    Estudante(string nm, string nBI, string gen, long nEst, string inst, string curs);
+    Estudante(string nm, string nBI, long nEst, string gen,  string inst, string curs);
 
             long getNumEst();
             string getInstituicao();
@@ -23,6 +23,8 @@ public:
             void setNumEst(long nEst);
             void setInstituicao(string inst);
             void setCurso(string curs);
+
+            string toString();
 };
 
 #endif // ESTUDANTE_H

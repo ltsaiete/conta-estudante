@@ -7,11 +7,12 @@ Estudante::Estudante()
 
 
 //Metodo consrutor
-Estudante::Estudante(string nm, string nBI, string gen, long nEst, string inst, string curs){
+Estudante::Estudante(string nm, string nBI, long nEst, string gen, string inst, string curs){
     nome = nm;
     numBI = nBI;
-    genero = gen;
     numEst = nEst;
+    genero = gen;
+
     instituicao = inst;
     curso = curs;
 }
@@ -48,3 +49,8 @@ void Estudante::setCurso(string curs){
     curso = curs;
 
 }
+/*
+string Estudante::toString(){
+    return "Nome: " + nome + "\nNumero de BI: " + numBI + "\nNumero de Estudante: ";
+}
+*/
