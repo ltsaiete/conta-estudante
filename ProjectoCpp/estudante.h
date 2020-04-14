@@ -4,7 +4,7 @@
 #include <string>
 #include <QFile>
 #include <QTextStream>
-#include <QMessageBox>
+
 using namespace std;
 
 class Estudante:public Cidadao

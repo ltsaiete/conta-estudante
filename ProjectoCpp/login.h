@@ -1,6 +1,6 @@
 #ifndef LOGIN_H
 #define LOGIN_H
-
+#include "contaestudante.h"
 #include <QDialog>
 
 namespace Ui {
@@ -23,7 +23,7 @@ private slots:
 
 private:
     Ui::Login *ui;
-    bool verPass(QString numConta, QString pass);
+    bool verPass(QString numConta, int pass);
 };
 
 #endif // LOGIN_H

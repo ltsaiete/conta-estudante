@@ -1,5 +1,6 @@
 #ifndef FRMDEPOSITO_H
 #define FRMDEPOSITO_H
+#include "contaestudante.h"
 
 #include <QDialog>
 
@@ -20,6 +21,8 @@ private slots:
 
 private:
     Ui::FrmDeposito *ui;
+    bool novoSaldo(long conta, float valor);
+    long conta();
 };
 
 #endif // FRMDEPOSITO_H

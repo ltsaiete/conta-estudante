@@ -31,7 +31,7 @@ void FrmConta::on_btSalvar_clicked()
 
         contaEst = *new ContaEstudante(BI.toStdString(), numConta.toLong(), senha.toInt(), saldo.toFloat());
 
-        saveToFile(BI, numConta, senha, saldo);
+        contaEst.saveToFile(contaEst);
 
         QMessageBox::information(this, "Dados da Conta", "Titular: " + BI + "\nNumero de Conta: " +
                                  numConta + "\nSenha: " + senha + "\nSaldo: " + saldo);
@@ -52,28 +52,6 @@ void FrmConta::on_btLimpar_clicked()
 
     ui->txtBI->setFocus();
 }
-
-void FrmConta::saveToFile(QString BI, QString numConta, QString senha, QString saldo){
-
-    QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";
-    QString arq = "listaConta.txt";
-    QFile file(local + arq);
-
-    if(!file.open(QFile::Append|QFile::Text)){
-        QMessageBox::warning(this, "ERRO", "Erro ao abrir arquivo");
-    }else{
-        QTextStream saida(&file);
-
-        saida << BI + "\n"
-                 + numConta + "\n"
-                 + senha + "\n"
-                 + saldo  +"\n";
-        file.flush();
-        file.close();
-    }
-
-}
-
 
 
 //Verifica se existe o titular da conta que tentamos abrir

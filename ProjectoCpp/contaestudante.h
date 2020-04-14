@@ -12,10 +12,14 @@ private:
         string BITitular;
 public:
     ContaEstudante();
-    ContaEstudante(string BITit, long nConta, float sld, int sen);
+    ContaEstudante(string BITit, long nConta, int sen,float sld);
 
-            string getBITitular();
-            void setBITitular(string BITit);
+    string getBITitular();
+    void setBITitular(string BITit);
+
+    void saveToFile(ContaEstudante conta);
+    void saveFromZero(ContaEstudante conta[]);
+    ContaEstudante* readFromFile(ContaEstudante conta[]);
 };
 
 #endif // CONTAESTUDANTE_H
