@@ -78,29 +78,20 @@ void FrmConta::saveToFile(QString BI, QString numConta, QString senha, QString s
 
 //Verifica se existe o titular da conta que tentamos abrir
 bool FrmConta::existeBI(QString BI){
-    QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";
-    QString arq = "listaEstudante.txt";
-    QFile file(local + arq);
-    QString estBI;
-    bool res = false;
+    bool res=false;
 
-    int cont=0, k1=2, k2=3;
+    Estudante estudante[30];
+    Estudante* est;
+    est = est->readFromFile(estudante);
 
-    if(!file.open(QFile::ReadOnly|QFile::Text)){
-        QMessageBox::warning(this, "ERRO", "Erro ao abrir arquivo");
-    }else{
-        QTextStream entrada(&file);
-        while(!entrada.atEnd() && res!=true){
+    for(int i=0; i<30; i++){
+        estudante[i] = *(est+i);
+    }
 
-            QString texto = entrada.readLine();
-            if((cont%k1==0 && cont%k2==0) || cont==1){
-                if(BI==texto){
-                    res=true;
-                    QMessageBox::warning(this, "BI", texto);
-                }
-            }
+    for(int i=0; i<30; i++){
+        if(BI==QString::fromStdString(estudante[i].getNumBI())){
+            res=true;
         }
-        file.close();
     }
 
     return res;

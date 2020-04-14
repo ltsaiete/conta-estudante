@@ -22,6 +22,8 @@ private slots:
 
     void on_btPropinas_clicked();
 
+    void on_btDeposito_clicked();
+
 private:
     Ui::OperacoesCartao *ui;
 };

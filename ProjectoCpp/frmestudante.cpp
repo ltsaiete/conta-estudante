@@ -33,10 +33,10 @@ void FrmEstudante::on_btSalvar_clicked()
 
     estudante = *new Estudante(nome.toStdString(), BI.toStdString(), numEst.toLong(), genero.toStdString(), instituicao.toStdString(), curso.toStdString());
 
-
-    saveTofile(nome , BI, numEst, genero, instituicao, curso);
     QString dados = "Nome: " + nome + "\nNumero de BI: " + BI + "\nNumero de Estudante: " + numEst
             + "\nGenero: " + genero + "\nInstituicao: " + instituicao + "\nCurso: " + curso;
+
+    estudante.saveToFile(estudante);
 
     QMessageBox::information(this, "Dados do Estudante", dados);
 
@@ -56,26 +56,3 @@ void FrmEstudante::on_btLimpar_clicked()
     ui->txtNome->setFocus();
 }
 
-void FrmEstudante::saveTofile(QString nome , QString BI, QString numEst, QString genero, QString instituicao, QString curso){
-
-    QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";
-    QString arq = "listaEstudante.txt";
-    QFile file(local + arq);
-
-    if(!file.open(QFile::Append|QFile::Text)){
-        QMessageBox::warning(this, "ERRO", "Erro ao abrir arquivo");
-    }else{
-        QTextStream saida(&file);
-
-        saida << nome + "\n"
-                 + BI + "\n"
-                 + numEst + "\n"
-                 + genero + "\n"
-                 + instituicao + "\n"
-                 + curso + "\n";
-
-        file.flush();
-        file.close();
-    }
-
-}

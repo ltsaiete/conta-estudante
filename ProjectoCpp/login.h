@@ -18,6 +18,9 @@ public:
 private slots:
     void on_btLogin_clicked();
 
+    void on_btLimpar_clicked();
+    void fileConta(QString numConta);
+
 private:
     Ui::Login *ui;
     bool verPass(QString numConta, QString pass);

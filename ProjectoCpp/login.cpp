@@ -28,14 +28,23 @@ void Login::on_btLogin_clicked()
     if(res==true){
         OperacoesCartao operacoes;
         operacoes.exec();
-        Login login;
-        login.setVisible(false);
+        fileConta(numConta);
+        on_btLimpar_clicked();
     }else{
         QMessageBox::warning(this, "ERRO", "Numero de conta ou senha incorrecta");
     }
 
 
 }
+
+void Login::on_btLimpar_clicked()
+{
+    ui->txtNumConta->clear();
+    ui->txtPassword->clear();
+
+    ui->txtNumConta->setFocus();
+}
+
 
 bool Login::verPass(QString numConta, QString pass){
     QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";
@@ -75,3 +84,24 @@ bool Login::verPass(QString numConta, QString pass){
 
     return res;
 }
+
+
+void Login::fileConta(QString numConta){
+
+    QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";
+    QString arq = "conta.txt";
+    QFile file(local + arq);
+
+    if(!file.open(QFile::WriteOnly|QFile::Text)){
+        QMessageBox::warning(this, "ERRO", "Erro ao abrir arquivo");
+    }else{
+        QTextStream saida(&file);
+
+        saida << numConta;
+
+        file.flush();
+        file.close();
+    }
+
+}
+

@@ -21,6 +21,7 @@ SOURCES += \
     contaestudante.cpp \
     estudante.cpp \
     frmconta.cpp \
+    frmdeposito.cpp \
     frmestudante.cpp \
     frmlevantamento.cpp \
     login.cpp \
@@ -34,6 +35,7 @@ HEADERS += \
     contaestudante.h \
     estudante.h \
     frmconta.h \
+    frmdeposito.h \
     frmestudante.h \
     frmlevantamento.h \
     login.h \
@@ -42,6 +44,7 @@ HEADERS += \
 
 FORMS += \
     frmconta.ui \
+    frmdeposito.ui \
     frmestudante.ui \
     frmlevantamento.ui \
     login.ui \

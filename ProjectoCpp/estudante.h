@@ -2,7 +2,9 @@
 #define ESTUDANTE_H
 #include "cidadao.h"
 #include <string>
-#include <fstream>
+#include <QFile>
+#include <QTextStream>
+#include <QMessageBox>
 using namespace std;
 
 class Estudante:public Cidadao
@@ -27,7 +29,8 @@ public:
 
             string toString();
 
-            void saveToFile(Estudante& estudante);
+            void saveToFile(Estudante estudante);
+            Estudante* readFromFile(Estudante estudante[]);
 
 };
 
