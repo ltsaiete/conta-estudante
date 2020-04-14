@@ -1,5 +1,6 @@
 #include "operacoescartao.h"
 #include "ui_operacoescartao.h"
+#include "login.h"
 
 OperacoesCartao::OperacoesCartao(QWidget *parent) :
     QDialog(parent),
@@ -11,4 +12,22 @@ OperacoesCartao::OperacoesCartao(QWidget *parent) :
 OperacoesCartao::~OperacoesCartao()
 {
     delete ui;
+}
+
+void OperacoesCartao::on_btLevantamento_clicked()
+{
+    Login login;
+    login.exec();
+}
+
+void OperacoesCartao::on_btTransferencia_clicked()
+{
+    Login login;
+    login.exec();
+}
+
+void OperacoesCartao::on_btPropinas_clicked()
+{
+    Login login;
+    login.exec();
 }

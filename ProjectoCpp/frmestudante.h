@@ -22,7 +22,7 @@ private slots:
 
     void on_btLimpar_clicked();
 
-    void saveTofile(Estudante estudante);
+    void saveTofile(QString nome , QString BI, QString numEst, QString genero, QString instituicao, QString curso);
 
 
 

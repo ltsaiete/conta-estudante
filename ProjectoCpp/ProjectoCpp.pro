@@ -25,7 +25,7 @@ SOURCES += \
     frmlevantamento.cpp \
     login.cpp \
     main.cpp \
-    frmmenu.cpp \
+    mainwindow.cpp \
     operacoescartao.cpp
 
 HEADERS += \
@@ -36,16 +36,16 @@ HEADERS += \
     frmconta.h \
     frmestudante.h \
     frmlevantamento.h \
-    frmmenu.h \
     login.h \
+    mainwindow.h \
     operacoescartao.h
 
 FORMS += \
     frmconta.ui \
     frmestudante.ui \
     frmlevantamento.ui \
-    frmmenu.ui \
     login.ui \
+    mainwindow.ui \
     operacoescartao.ui
 
 # Default rules for deployment.

@@ -15,6 +15,13 @@ public:
     explicit OperacoesCartao(QWidget *parent = nullptr);
     ~OperacoesCartao();
 
+private slots:
+    void on_btLevantamento_clicked();
+
+    void on_btTransferencia_clicked();
+
+    void on_btPropinas_clicked();
+
 private:
     Ui::OperacoesCartao *ui;
 };

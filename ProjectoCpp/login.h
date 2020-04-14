@@ -16,10 +16,11 @@ public:
     ~Login();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_btLogin_clicked();
 
 private:
     Ui::Login *ui;
+    bool verPass(QString numConta, QString pass);
 };
 
 #endif // LOGIN_H
