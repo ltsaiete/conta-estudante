@@ -16,17 +16,16 @@ public:
     explicit FrmConta(QWidget *parent = nullptr);
     ~FrmConta();
 
-    ContaEstudante *contaEst;
-
 private slots:
     void on_btSalvar_clicked();
-
     void on_btLimpar_clicked();
+
+    void saveToFile(QString BI, QString numConta, QString senha, QString saldo);
 
 private:
     Ui::FrmConta *ui;
-    bool existeBI(string BI);
-    int cont;
+    bool existeBI(QString BI);
+
 };
 
 #endif // FRMCONTA_H

@@ -1,6 +1,7 @@
 #ifndef FRMESTUDANTE_H
 #define FRMESTUDANTE_H
 #include "estudante.h"
+#include <fstream>
 #include <QDialog>
 
 namespace Ui {
@@ -14,7 +15,6 @@ class FrmEstudante : public QDialog
 public:
     explicit FrmEstudante(QWidget *parent = nullptr);
     ~FrmEstudante();
-    Estudante *est;
     int cont;
 
 private slots:
@@ -22,9 +22,14 @@ private slots:
 
     void on_btLimpar_clicked();
 
+    void saveTofile(Estudante estudante);
+
+
 
 private:
     Ui::FrmEstudante *ui;
+
+
 
 
 };

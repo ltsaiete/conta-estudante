@@ -1,5 +1,6 @@
 #include "frmmenu.h"
 #include "ui_frmmenu.h"
+#include "login.h"
 
 FrmMenu::FrmMenu(QWidget *parent)
     : QMainWindow(parent)
@@ -25,4 +26,11 @@ void FrmMenu::on_mnCadConta_clicked()
 {
     mnCadConta = new FrmConta(this);
     mnCadConta -> show();
+}
+
+
+void FrmMenu::on_btOperaCartao_clicked()
+{
+    Login show;
+    show.exec();
 }

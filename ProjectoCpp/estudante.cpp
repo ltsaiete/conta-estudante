@@ -1,5 +1,5 @@
 #include "estudante.h"
-
+#include <QMessageBox>
 Estudante::Estudante()
 {
 
@@ -49,8 +49,3 @@ void Estudante::setCurso(string curs){
     curso = curs;
 
 }
-/*
-string Estudante::toString(){
-    return "Nome: " + nome + "\nNumero de BI: " + numBI + "\nNumero de Estudante: ";
-}
-*/

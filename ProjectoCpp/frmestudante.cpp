@@ -1,6 +1,9 @@
 #include "frmestudante.h"
 #include "ui_frmestudante.h"
+#include <QFile>
+#include <QTextStream>
 #include <QMessageBox>
+#include <fstream>
 #include <string>
 using namespace std;
 
@@ -9,9 +12,6 @@ FrmEstudante::FrmEstudante(QWidget *parent) :
     ui(new Ui::FrmEstudante)
 {
     ui->setupUi(this);
-
-    est = new Estudante[30];
-    cont=0;
 }
 
 FrmEstudante::~FrmEstudante()
@@ -21,6 +21,9 @@ FrmEstudante::~FrmEstudante()
 
 void FrmEstudante::on_btSalvar_clicked()
 {
+    Estudante estudante;
+
+
     QString nome = ui->txtNome->text();
     QString BI = ui->txtBI->text();
     QString numEst = ui->txtNumEst->text();
@@ -28,23 +31,15 @@ void FrmEstudante::on_btSalvar_clicked()
     QString instituicao = ui->txtInstituicao->text();
     QString curso = ui->txtCurso->text();
 
-    est[cont] = *new Estudante(nome.toStdString(), BI.toStdString(), numEst.toLong(), genero.toStdString(), instituicao.toStdString(), curso.toStdString());
+    estudante = *new Estudante(nome.toStdString(), BI.toStdString(), numEst.toLong(), genero.toStdString(), instituicao.toStdString(), curso.toStdString());
 
-    /*
-    est[cont].setNome( nome.toStdString());
-    est[cont].setNumBI(BI.toStdString());
-    est[cont].setNumEst(numEst.toLong());
-    est[cont].setGenero(genero.toStdString());
-    est[cont].setInstituicao(instituicao.toStdString());
-    est[cont].setCurso(curso.toStdString());
-    */
 
+    saveTofile(estudante);
     QString dados = "Nome: " + nome + "\nNumero de BI: " + BI + "\nNumero de Estudante: " + numEst
             + "\nGenero: " + genero + "\nInstituicao: " + instituicao + "\nCurso: " + curso;
 
     QMessageBox::information(this, "Dados do Estudante", dados);
 
-    cont++;
     on_btLimpar_clicked();
 
 }
@@ -61,3 +56,26 @@ void FrmEstudante::on_btLimpar_clicked()
     ui->txtNome->setFocus();
 }
 
+void FrmEstudante::saveTofile(Estudante estudante){
+
+    QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";
+    QString arq = "listaEstudante.txt";
+    QFile file(local + arq);
+
+    if(!file.open(QFile::Append|QFile::Text)){
+        QMessageBox::warning(this, "ERRO", "Erro ao abrir arquivo");
+    }else{
+        QTextStream saida(&file);
+
+        saida << QString::fromStdString(estudante.getNome()) + "\n"
+                 + QString::fromStdString(estudante.getNumBI()) + "\n"
+                 + estudante.getNumEst() + "\n"
+                 + QString::fromStdString(estudante.getGenero())  +"\n"
+                 + QString::fromStdString(estudante.getInstituicao()) + "\n"
+                 + QString::fromStdString(estudante.getCurso()) + "\n";
+
+        file.flush();
+        file.close();
+    }
+
+}

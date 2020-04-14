@@ -2,6 +2,7 @@
 #define ESTUDANTE_H
 #include "cidadao.h"
 #include <string>
+#include <fstream>
 using namespace std;
 
 class Estudante:public Cidadao
@@ -25,6 +26,9 @@ public:
             void setCurso(string curs);
 
             string toString();
+
+            void saveToFile(Estudante& estudante);
+
 };
 
 #endif // ESTUDANTE_H

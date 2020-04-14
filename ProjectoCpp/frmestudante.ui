@@ -54,7 +54,7 @@
       <x>50</x>
       <y>40</y>
       <width>431</width>
-      <height>206</height>
+      <height>191</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
@@ -184,27 +184,6 @@
        </property>
       </widget>
      </item>
-     <item row="6" column="0">
-      <widget class="QLabel" name="label_8">
-       <property name="font">
-        <font>
-         <pointsize>9</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Mensalidade</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="1">
-      <widget class="QLineEdit" name="lineEdit_7">
-       <property name="font">
-        <font>
-         <pointsize>9</pointsize>
-        </font>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
   </widget>
@@ -242,7 +221,6 @@
   <tabstop>txtGenero</tabstop>
   <tabstop>txtInstituicao</tabstop>
   <tabstop>txtCurso</tabstop>
-  <tabstop>lineEdit_7</tabstop>
   <tabstop>btSalvar</tabstop>
   <tabstop>btLimpar</tabstop>
  </tabstops>

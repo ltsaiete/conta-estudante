@@ -22,8 +22,11 @@ SOURCES += \
     estudante.cpp \
     frmconta.cpp \
     frmestudante.cpp \
+    frmlevantamento.cpp \
+    login.cpp \
     main.cpp \
-    frmmenu.cpp
+    frmmenu.cpp \
+    operacoescartao.cpp
 
 HEADERS += \
     cidadao.h \
@@ -32,12 +35,18 @@ HEADERS += \
     estudante.h \
     frmconta.h \
     frmestudante.h \
-    frmmenu.h
+    frmlevantamento.h \
+    frmmenu.h \
+    login.h \
+    operacoescartao.h
 
 FORMS += \
     frmconta.ui \
     frmestudante.ui \
-    frmmenu.ui
+    frmlevantamento.ui \
+    frmmenu.ui \
+    login.ui \
+    operacoescartao.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

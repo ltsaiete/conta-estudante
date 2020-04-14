@@ -24,6 +24,9 @@ private slots:
 
     void on_mnCadConta_clicked();
 
+
+    void on_btOperaCartao_clicked();
+
 private:
     Ui::FrmMenu *ui;
     //Criacao dos objectos dos forms
