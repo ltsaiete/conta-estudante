@@ -39,13 +39,15 @@ void ContaEstudante:: saveToFile(ContaEstudante conta){
 
         saida << BI + "\n"
                  + nConta + "\n"
-                 + sld + "\n"
-                 + sen + "\n";
+                 + sen + "\n"
+                 + sld + "\n";
 
         file.flush();
         file.close();
     }
 }
+
+/*
 
 void ContaEstudante::saveFromZero(ContaEstudante conta[]){
 
@@ -92,7 +94,7 @@ void ContaEstudante::saveFromZero(ContaEstudante conta[]){
 
 }
 
-
+*/
 ContaEstudante* ContaEstudante::readFromFile(ContaEstudante conta[]){
 
     QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";

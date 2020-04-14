@@ -2,6 +2,7 @@
 #include "ui_operacoescartao.h"
 #include "login.h"
 #include "frmdeposito.h"
+#include "frmlevantamento.h"
 
 OperacoesCartao::OperacoesCartao(QWidget *parent) :
     QDialog(parent),
@@ -17,8 +18,8 @@ OperacoesCartao::~OperacoesCartao()
 
 void OperacoesCartao::on_btLevantamento_clicked()
 {
-    Login login;
-    login.exec();
+    FrmDeposito levantamento;
+    levantamento.exec();
 }
 
 void OperacoesCartao::on_btTransferencia_clicked()
