@@ -21,7 +21,7 @@ private slots:
 private:
     Ui::FrmLevantamento *ui;
     bool novoSaldo(long conta, float valor);
-    float conta();
+    long conta();
 };
 
 #endif // FRMLEVANTAMENTO_H
