@@ -37,10 +37,12 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(202, 197, 201);
-background-image: url(:/img/img/contaestudante.png);
+     <string notr="true">#btCadConta{
+background-color: rgb(202, 197, 201);
+background-image: url(:/images/images/contaestudante.png);
 background-repeat: no-repeat;
-background-position: center;</string>
+background-position: center;
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -55,17 +57,19 @@ background-position: center;</string>
    <widget class="QPushButton" name="btOperacoes">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>90</x>
       <y>280</y>
-      <width>171</width>
-      <height>101</height>
+      <width>191</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(202, 197, 201);
-background-image: url(:/imag/imag/Money-Increase-icon.png);
+     <string notr="true">#btOperacoes{
+background-color: rgb(202, 197, 201);
+background-image: url(:/images/images/Money-Increase-icon.png);
 background-repeat: no-repeat;
-background-position: center;</string>
+background-position: center;
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -83,21 +87,15 @@ background-position: center;</string>
       <x>100</x>
       <y>90</y>
       <width>171</width>
-      <height>101</height>
+      <height>121</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#btn_2{
-	background-color: rgb(202, 197, 201);
-	
-	background-image: url(:/img/img/student.png);
+     <string notr="true">#btCadEstudante{
+	background-color: rgb(202, 197, 201);	
+	background-image: url(:/images/images/student.png);
 	background-repeat: no-repeat;
 	background-position: center;
-	
-
-	
-
-
 }</string>
     </property>
     <property name="text">
@@ -169,10 +167,12 @@ background-position: center;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(202, 197, 201);
-background-image: url(:/imag/imag/Checklist-icon.png);
+     <string notr="true">#btListaEstudante{
+background-color: rgb(202, 197, 201);
+background-image: url(:/images/images/Checklist-icon.png);
 background-repeat: no-repeat;
-background-position: center;</string>
+background-position: center;
+}</string>
     </property>
     <property name="text">
      <string/>

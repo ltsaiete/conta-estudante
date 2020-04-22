@@ -24,12 +24,20 @@ void FrmEstudante::on_btSalvar_clicked()
     Estudante estudante;
 
 
+
+
     QString nome = ui->txtNome->text();
     QString BI = ui->txtBI->text();
     QString numEst = ui->txtNumEst->text();
-    QString genero = ui->txtGenero->text();
+    QString genero;
     QString instituicao = ui->txtInstituicao->text();
     QString curso = ui->txtCurso->text();
+
+    if(ui->rbMasc->isChecked()){
+        genero = ui->rbMasc->text();
+    }else if(ui->rbFem->isChecked()){
+        genero = ui->rbFem->text();
+    }
 
     estudante = *new Estudante(nome.toStdString(), BI.toStdString(), numEst.toLong(), genero.toStdString(), instituicao.toStdString(), curso.toStdString());
 

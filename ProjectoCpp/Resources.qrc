@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/bank-icon.png</file>
+        <file>images/Checklist-icon.png</file>
+        <file>images/cidadao.png</file>
+        <file>images/contacartao.png</file>
+        <file>images/contaestudante.png</file>
+        <file>images/Money-Increase-icon.png</file>
+        <file>images/student.png</file>
+    </qresource>
+    <qresource prefix="/files">
+        <file>files/conta.txt</file>
+        <file>files/listaConta.txt</file>
+        <file>files/listaEstudante.txt</file>
+    </qresource>
+</RCC>
