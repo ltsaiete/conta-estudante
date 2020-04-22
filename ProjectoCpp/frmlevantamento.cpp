@@ -17,10 +17,17 @@ FrmLevantamento::~FrmLevantamento()
 
 void FrmLevantamento::on_btConfirm_clicked()
 {
+    Validar v;
+    bool val;
+    bool res = false;
+
     QString valor = ui->txtValor->text();
     long conta = this->conta();
 
-    bool res = novoSaldo(conta, valor.toFloat());
+    val = v.validaInt(valor.toInt(), 10, 10000);
+    if(val==true){
+        res = novoSaldo(conta, valor.toFloat());
+    }
 
     if(res==true){
         QMessageBox::information(this, "Deposito", "Deposito efectuado com sucesso");
@@ -40,26 +47,26 @@ bool FrmLevantamento::novoSaldo(long conta, float valor){
     ContaEstudante co;
     c = c->readFromFile(contaEst);
 
-    for(int i=0; i<5; i++){
+    for(int i=0; i<30; i++){
         contaEst[i] = *(c+i);
 
      }
 
-    for(int i=0; i<5; i++){
+    for(int i=0; i<30 && res!=true; i++){
        if(contaEst[i].getNumConta()==conta){
            float atual = contaEst[i].getSaldo();
            contaEst[i].setSaldo(atual-valor);
-           QMessageBox::information(this, "novo saldo", "saldo " + QString::number(contaEst[i].getSaldo()));
+           QMessageBox::information(this, "Novo saldo", "Saldo: " + QString::number(contaEst[i].getSaldo()));
            res=true;
-     }
+      }
     }
 
-       QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";
+       QString local = "files/files/";
        QString arq = "listaConta.txt";
        QFile file(local + arq);
 
        if(!file.open(QFile::WriteOnly|QFile::Text)){
-           //QMessageBox::warning(this, "ERRO", "Erro ao abrir arquivo");
+           QMessageBox::warning(this, "ERRO", "Erro ao abrir arquivo");
        }else{
            QTextStream saida(&file);
 
@@ -72,7 +79,7 @@ bool FrmLevantamento::novoSaldo(long conta, float valor){
            file.close();
        }
 
-       for(int i=1; i<5; i++){
+       for(int i=1; i<30 && (contaEst[i].getNumConta()!=0); i++){
           co.saveToFile(contaEst[i]);
         }
 
@@ -82,18 +89,18 @@ bool FrmLevantamento::novoSaldo(long conta, float valor){
 
 long FrmLevantamento::conta() {
     long conta=0;
-    QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";
+    QString local = "files/files/";
     QString arq = "conta.txt";
     QFile file(local + arq);
 
     if(!file.open(QFile::ReadOnly|QFile::Text)){
-        QMessageBox::warning(this, "ERRO 1", "Erro ao abrir arquivo conta");
+        QMessageBox::warning(this, "ERRO", "Erro ao abrir arquivo conta");
     }else{
         QTextStream entrada(&file);
 
         QString texto = entrada.readAll();
         conta = texto.toLong();
-        QMessageBox::information(this, "Conta encontrada", "conta " + QString::number(conta));
+        //QMessageBox::information(this, "Conta encontrada", "conta " + QString::number(conta));
         file.close();
     }
 

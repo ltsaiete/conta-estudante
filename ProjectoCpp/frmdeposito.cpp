@@ -21,15 +21,16 @@ void FrmDeposito::on_btConfirm_clicked()
 
     Validar v;
     bool val;
-
+    bool res = false;
     QString valor = ui->txtValor->text();
     long conta = this->conta();
 
     val = v.validaFloat(valor.toFloat(), 10, 50000);
+    if(val==true){
+    res = novoSaldo(conta, valor.toFloat());
+    }
 
-    bool res = novoSaldo(conta, valor.toFloat());
-
-    if(res==true){
+    if(res==true ){
         QMessageBox::information(this, "Deposito", "Deposito efectuado com sucesso");
     }else{
         QMessageBox::warning(this, "Deposito", "Falha ao efectuar deposito");
