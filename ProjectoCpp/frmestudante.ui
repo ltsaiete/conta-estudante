@@ -39,10 +39,10 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>90</y>
-     <width>531</width>
-     <height>301</height>
+     <x>90</x>
+     <y>100</y>
+     <width>511</width>
+     <height>261</height>
     </rect>
    </property>
    <property name="title">
@@ -199,8 +199,8 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>420</y>
+     <x>180</x>
+     <y>400</y>
      <width>321</width>
      <height>71</height>
     </rect>

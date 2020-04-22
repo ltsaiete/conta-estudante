@@ -51,7 +51,7 @@ void Estudante::setCurso(string curs){
 }
 
 void Estudante:: saveToFile(Estudante estudante){
-    QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";
+    QString local = "files/files/";
     QString arq = "listaEstudante.txt";
     QFile file(local + arq);
 
@@ -81,7 +81,7 @@ void Estudante:: saveToFile(Estudante estudante){
 
 Estudante* Estudante::readFromFile(Estudante estudante[]){
 
-    QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";
+    QString local = "files/files/";
     QString arq = "listaEstudante.txt";
     QFile file(local + arq);
 

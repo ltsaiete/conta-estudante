@@ -24,6 +24,7 @@ void FrmEstudante::on_btSalvar_clicked()
     Estudante estudante;
     Validar v;
     bool val;
+
     QString nome = ui->txtNome->text();
     QString BI = ui->txtBI->text();
     QString numEst = ui->txtNumEst->text();

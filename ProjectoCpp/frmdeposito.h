@@ -1,6 +1,7 @@
 #ifndef FRMDEPOSITO_H
 #define FRMDEPOSITO_H
 #include "contaestudante.h"
+#include "validar.h"
 
 #include <QDialog>
 

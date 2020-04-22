@@ -2,6 +2,7 @@
 #define FRMCONTA_H
 #include "frmestudante.h"
 #include "contaestudante.h"
+#include "validar.h"
 #include <QDialog>
 
 namespace Ui {

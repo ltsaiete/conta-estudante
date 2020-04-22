@@ -34,3 +34,13 @@ bool Validar::validaLong(long n, long min, long max){
 
     return res;
 }
+
+bool Validar::validaFloat(float n, float min, float max){
+    bool res=true;
+
+    if(n<min || n>max){
+        res=false;
+    }
+
+    return res;
+}

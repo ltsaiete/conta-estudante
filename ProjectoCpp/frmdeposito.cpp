@@ -18,8 +18,14 @@ FrmDeposito::~FrmDeposito()
 
 void FrmDeposito::on_btConfirm_clicked()
 {
+
+    Validar v;
+    bool val;
+
     QString valor = ui->txtValor->text();
     long conta = this->conta();
+
+    val = v.validaFloat(valor.toFloat(), 10, 50000);
 
     bool res = novoSaldo(conta, valor.toFloat());
 
@@ -39,26 +45,26 @@ bool FrmDeposito::novoSaldo(long conta, float valor){
     ContaEstudante co;
     c = c->readFromFile(contaEst);
 
-    for(int i=0; i<5; i++){
+    for(int i=0; i<30; i++){
         contaEst[i] = *(c+i);
 
      }
 
-    for(int i=0; i<5; i++){
+    for(int i=0; i<30 && (contaEst[i].getNumConta()!=0); i++){
        if(contaEst[i].getNumConta()==conta){
            float atual = contaEst[i].getSaldo();
            contaEst[i].setSaldo(atual+valor);
-           QMessageBox::information(this, "novo saldo", "saldo " + QString::number(contaEst[i].getSaldo()));
+           QMessageBox::information(this, "Novo saldo", "saldo: " + QString::number(contaEst[i].getSaldo()));
            res=true;
      }
     }
 
-       QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";
+       QString local = "files/files/";
        QString arq = "listaConta.txt";
        QFile file(local + arq);
 
        if(!file.open(QFile::WriteOnly|QFile::Text)){
-           //QMessageBox::warning(this, "ERRO", "Erro ao abrir arquivo");
+           QMessageBox::warning(this, "ERRO", "Erro ao abrir arquivo");
        }else{
            QTextStream saida(&file);
 
@@ -71,17 +77,16 @@ bool FrmDeposito::novoSaldo(long conta, float valor){
            file.close();
        }
 
-       for(int i=1; i<5; i++){
+       for(int i=1; i<30 && (contaEst[i].getNumConta()!=0); i++){
           co.saveToFile(contaEst[i]);
         }
-
 
     return res;
 }
 
 long FrmDeposito::conta(){
-    long conta=123456;
-    QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";
+    long conta;
+    QString local = "files/files/";
     QString arq = "conta.txt";
     QFile file(local + arq);
 

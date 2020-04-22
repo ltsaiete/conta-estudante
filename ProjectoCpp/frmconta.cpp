@@ -20,12 +20,18 @@ FrmConta::~FrmConta()
 void FrmConta::on_btSalvar_clicked()
 {
     ContaEstudante contaEst;
+    Validar v;
+
     QString BI = ui->txtBI->text();
     QString numConta = ui->txtNumConta->text();
     QString senha = ui->txtSenha->text();
     QString saldo = ui->txtSaldo->text();
 
     bool res = existeBI(BI);
+    res = v.validaLong(numConta.toLong(), 100000000, 999999999);
+    res = v.validaInt(senha.toInt(), 0000, 9999);
+    res = v.validaFloat(saldo.toFloat(), 200, 50000);
+
 
     if(res==true){
 
@@ -34,12 +40,12 @@ void FrmConta::on_btSalvar_clicked()
         contaEst.saveToFile(contaEst);
 
         QMessageBox::information(this, "Dados da Conta", "Titular: " + BI + "\nNumero de Conta: " +
-                                 numConta + "\nSenha: " + senha + "\nSaldo: " + saldo);
+                                 numConta + "\nSenha: ****"  + "\nSaldo: " + saldo);
 
         on_btLimpar_clicked();
 
     }else{
-        QMessageBox::warning(this, "Dados da Conta", "Estudante nao Encontrado, tente novamente!");
+        QMessageBox::warning(this, "Dados da Conta", "Verifique os dados e tente novamente!");
     }
 }
 

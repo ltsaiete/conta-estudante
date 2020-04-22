@@ -23,14 +23,14 @@ void ContaEstudante::setBITitular(string BITit){
 
 
 void ContaEstudante:: saveToFile(ContaEstudante conta){
-    QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";
+    QString local = "files/files/";
     QString arq = "listaConta.txt";
     QFile file(local + arq);
 
     QString BI = QString::fromStdString(conta.BITitular);
     QString nConta = QString::number(conta.numConta);
-    QString sld = QString::number(conta.saldo);
     QString sen = QString::number(conta.senha);
+    QString sld = QString::number(conta.saldo);
 
     if(!file.open(QFile::Append|QFile::Text)){
         //QMessageBox::warning(this, "ERRO", "Erro ao abrir arquivo");
@@ -47,64 +47,16 @@ void ContaEstudante:: saveToFile(ContaEstudante conta){
     }
 }
 
-/*
-
-void ContaEstudante::saveFromZero(ContaEstudante conta[]){
-
-    QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";
-    QString arq = "listaConta.txt";
-    QFile file(local + arq);
-
-    for(int i=0; i<30;i++){
-        QString BI = QString::fromStdString(conta[i].BITitular);
-        QString nConta = QString::number(conta[i].numConta);
-        QString sld = QString::number(conta[i].saldo);
-        QString sen = QString::number(conta[i].senha);
-
-        if(i==0){
-            if(file.open(QFile::WriteOnly|QFile::Text)){
-                QTextStream saida(&file);
-
-                saida << BI + "\n"
-                         + nConta + "\n"
-                         + sen + "\n"
-                         + sld + "\n";
-
-                file.flush();
-                file.close();
-            }
-        }else{
-            if(file.open(QFile::WriteOnly|QFile::Text)){
-                QTextStream saida(&file);
-
-                saida << BI + "\n"
-                         + nConta + "\n"
-                         + sen + "\n"
-                         + sld + "\n";
-
-                file.flush();
-                file.close();
-            }
-        }
-
-
-    }
-
-
-
-}
-
-*/
 ContaEstudante* ContaEstudante::readFromFile(ContaEstudante conta[]){
 
-    QString local = "D:/Escolaridade/FENG/2_Ano/LP/C++/ProjectoFinal/ProjectoCpp/ProjectoCpp/files/";
+    QString local = "files/files/";
     QString arq = "listaConta.txt";
     QFile file(local + arq);
 
     QString BI;
     QString nConta;
-    QString sld;
     QString sen;
+    QString sld;
     int cont=0, linha=1;
 
     if(!file.open(QFile::ReadOnly|QFile::Text)){

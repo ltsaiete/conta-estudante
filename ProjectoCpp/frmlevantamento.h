@@ -1,6 +1,7 @@
 #ifndef FRMLEVANTAMENTO_H
 #define FRMLEVANTAMENTO_H
 #include "contaestudante.h"
+#include "validar.h"
 #include <QDialog>
 
 namespace Ui {
