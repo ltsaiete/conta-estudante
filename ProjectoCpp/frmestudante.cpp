@@ -22,10 +22,8 @@ FrmEstudante::~FrmEstudante()
 void FrmEstudante::on_btSalvar_clicked()
 {
     Estudante estudante;
-
-
-
-
+    Validar v;
+    bool val;
     QString nome = ui->txtNome->text();
     QString BI = ui->txtBI->text();
     QString numEst = ui->txtNumEst->text();
@@ -39,17 +37,24 @@ void FrmEstudante::on_btSalvar_clicked()
         genero = ui->rbFem->text();
     }
 
-    estudante = *new Estudante(nome.toStdString(), BI.toStdString(), numEst.toLong(), genero.toStdString(), instituicao.toStdString(), curso.toStdString());
+    val = v.validaString(nome.toStdString(), 3, 25);
+    val = v.validaString(BI.toStdString(), 13, 13);
+    val = v.validaLong(numEst.toLong(), 10000000, 99999999);
+    val = v.validaString(instituicao.toStdString(), 2, 25);
+    val = v.validaString(curso.toStdString(), 3, 25);
 
-    QString dados = "Nome: " + nome + "\nNumero de BI: " + BI + "\nNumero de Estudante: " + numEst
-            + "\nGenero: " + genero + "\nInstituicao: " + instituicao + "\nCurso: " + curso;
+    if(val==true){
+        estudante = *new Estudante(nome.toStdString(), BI.toStdString(), numEst.toLong(), genero.toStdString(), instituicao.toStdString(), curso.toStdString());
 
-    estudante.saveToFile(estudante);
+        QString dados = "Nome: " + nome + "\nNumero de BI: " + BI + "\nNumero de Estudante: " + numEst
+                + "\nGenero: " + genero + "\nInstituicao: " + instituicao + "\nCurso: " + curso;
 
-    QMessageBox::information(this, "Dados do Estudante", dados);
-
-    on_btLimpar_clicked();
-
+        estudante.saveToFile(estudante);
+        on_btLimpar_clicked();
+        QMessageBox::information(this, "Dados do Estudante", dados);
+    }else{
+        QMessageBox::information(this, "[ERRO]", "Verifique os dados e tente novamente.");
+    }
 }
 
 void FrmEstudante::on_btLimpar_clicked()
@@ -57,7 +62,6 @@ void FrmEstudante::on_btLimpar_clicked()
     ui->txtNome->clear();
     ui->txtBI->clear();
     ui->txtNumEst->clear();
-    ui->txtGenero->clear();
     ui->txtInstituicao->clear();
     ui->txtCurso->clear();
 

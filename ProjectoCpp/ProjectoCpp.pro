@@ -27,7 +27,8 @@ SOURCES += \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
-    operacoescartao.cpp
+    operacoescartao.cpp \
+    validar.cpp
 
 HEADERS += \
     cidadao.h \
@@ -40,7 +41,8 @@ HEADERS += \
     frmlevantamento.h \
     login.h \
     mainwindow.h \
-    operacoescartao.h
+    operacoescartao.h \
+    validar.h
 
 FORMS += \
     frmconta.ui \

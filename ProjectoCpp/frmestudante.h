@@ -1,6 +1,7 @@
 #ifndef FRMESTUDANTE_H
 #define FRMESTUDANTE_H
 #include "estudante.h"
+#include "validar.h"
 #include <fstream>
 #include <QDialog>
 

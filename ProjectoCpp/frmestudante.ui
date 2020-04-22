@@ -133,15 +133,6 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="txtGenero">
-       <property name="font">
-        <font>
-         <pointsize>9</pointsize>
-        </font>
-       </property>
-      </widget>
-     </item>
      <item row="4" column="0">
       <widget class="QLabel" name="label_6">
        <property name="font">
@@ -184,6 +175,24 @@
        </property>
       </widget>
      </item>
+     <item row="3" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QRadioButton" name="rbMasc">
+         <property name="text">
+          <string>Masculino</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="rbFem">
+         <property name="text">
+          <string>Feminino</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
     </layout>
    </widget>
   </widget>
@@ -213,38 +222,11 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>589</x>
-     <y>220</y>
-     <width>191</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
-    <item>
-     <widget class="QRadioButton" name="rbMasc">
-      <property name="text">
-       <string>Masculino</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QRadioButton" name="rbFem">
-      <property name="text">
-       <string>Feminino</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
  </widget>
  <tabstops>
   <tabstop>txtNome</tabstop>
   <tabstop>txtBI</tabstop>
   <tabstop>txtNumEst</tabstop>
-  <tabstop>txtGenero</tabstop>
   <tabstop>txtInstituicao</tabstop>
   <tabstop>txtCurso</tabstop>
   <tabstop>btSalvar</tabstop>
