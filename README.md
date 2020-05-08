@@ -1,4 +1,4 @@
-<h1>Conta Estudante</h1>
+<h1 align="center">Conta Estudante</h1>
 
 <p align="center">
  <a href="#projecto">Projecto</a> | 
