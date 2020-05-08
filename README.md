@@ -6,8 +6,6 @@
  <a href="#como-contribuir">Como contribuir</a> | 
  <a href="#licença">Licença</a>
 </p>
- 
-***
 
 # Projecto
 Esta é uma app que visa registar dados sobre um determinado estudante, sua conta bancária e manipulá-los de diversas formas. Esta app foi desenvolvida para aprender os principais conceitos relativos à POO em C++.
